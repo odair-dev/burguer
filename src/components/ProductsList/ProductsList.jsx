@@ -1,15 +1,22 @@
 import { Product } from "./Product/Product.jsx";
-import { StyledUl } from "./ProductList";
+import { StyledDivContainer } from "./productContainer.js";
 
-
-export function ProductsList({menuList, currentSale, setCurrentSale}){
+export function ProductsList({menuList, currentSale, setCurrentSale, showFiltered, setShowFiltered, found, setFound}){
     return(
-        <StyledUl>
-            {menuList.map((element)=>{
-                return(
-                    <Product key={element.id} element={element} currentSale={currentSale} setCurrentSale={setCurrentSale}/>
-                )
-            })}
-        </StyledUl>
+        <StyledDivContainer>
+            {showFiltered && 
+                <div className="divFiltered">
+                    <p className="textSeach">Resultado para: <span>{found}</span></p>
+                    <button className="btnCleanFilter" onClick={()=>{setShowFiltered(false); setFound("")}}>Limpar busca</button>
+                </div>
+            } 
+            <ul>
+                {menuList.map((element)=>{
+                    return(
+                        <Product key={element.id} element={element} currentSale={currentSale} setCurrentSale={setCurrentSale}/>
+                    )
+                })}
+            </ul>
+        </StyledDivContainer>
     )
 }

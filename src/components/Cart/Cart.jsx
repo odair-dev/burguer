@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { CardCart } from "./CardCart/CardCardt"
-import { StyledDivCart } from "./Cart"
+import { toast } from "react-toastify";
+import { CardCart } from "./CardCart/CardCardt";
+import { StyledDivCart } from "./Cart";
 
 export function Cart({currentSale, setCurrentSale}){
     const [showMessage, setShowMessage] = useState(true);
 
-    //Atualização
     useEffect(()=>{
         if(currentSale.length>0){
             setShowMessage(false);
@@ -34,7 +34,7 @@ export function Cart({currentSale, setCurrentSale}){
                 <h3>Total</h3>
                 <p>{currentSale.reduce((previousValue, value)=>{return previousValue+value.price;}, 0).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
             </div>}
-            {!showMessage && <button onClick={()=>setCurrentSale([])} className="btnRemoveAll">Remover todos</button>}
+            {!showMessage && <button onClick={()=>{setCurrentSale([]); toast.success("Itens removidos com sucesso")}} className="btnRemoveAll">Remover todos</button>}
         </StyledDivCart>
     )
 }

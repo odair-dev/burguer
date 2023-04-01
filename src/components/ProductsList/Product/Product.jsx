@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { StyledLi } from './Product'
 
 export function Product({element, currentSale, setCurrentSale}){
@@ -5,7 +6,7 @@ export function Product({element, currentSale, setCurrentSale}){
     return(
         <StyledLi>
             <div>
-                <img src={element.img} alt="" />
+                <img src={element.img} alt={element.name} />
             </div>
             <h2>{element.name}</h2>
             <p>{element.category}</p>
@@ -14,7 +15,9 @@ export function Product({element, currentSale, setCurrentSale}){
                     if(!currentSale.some(repeated=>repeated.id===element.id)){
                         setCurrentSale([...currentSale, element])
                     }else{
-                        console.log("Já Existe!");
+                        toast.error("Este produto já está na sacola!", {
+                            autoClose: 2000,
+                        });
                     }
                 }} 
             >Adicionar</button>

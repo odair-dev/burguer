@@ -6,8 +6,14 @@ export const StyledDivCart = styled.div`
     height: fit-content;
     margin: 16px 20px 0 10px;
     background: var(--gray-0);
+    justify-self: center;
+    @media(min-width: 768px){
+        width: 365px;
+        max-width: none;
+    }
     header{
         width: 100%;
+        max-width: 365px;
         height: 65px;
         background: var(--color-primary);
         color: var(--gray-0);
@@ -15,6 +21,10 @@ export const StyledDivCart = styled.div`
         padding-left: 20px; 
         align-items: center;
         border-radius: 5px 5px 0px 0px;
+        @media(min-width: 768px){
+            width: 365px;
+            max-width: none;
+        }
         h2{
             font-weight: 700;
             font-size: 1.125rem;
