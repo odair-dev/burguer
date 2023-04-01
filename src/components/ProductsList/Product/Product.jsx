@@ -13,7 +13,10 @@ export function Product({element, currentSale, setCurrentSale}){
             <h3>{element.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</h3>
             <button onClick={()=>{
                     if(!currentSale.some(repeated=>repeated.id===element.id)){
-                        setCurrentSale([...currentSale, element])
+                        setCurrentSale([...currentSale, element]);
+                        toast.success(`${element.name} adicionado com sucesso.`, {
+                            autoClose: 2000,
+                        });
                     }else{
                         toast.error("Este produto já está na sacola!", {
                             autoClose: 2000,

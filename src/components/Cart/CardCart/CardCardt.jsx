@@ -12,7 +12,7 @@ export function CardCart({element, currentSale, setCurrentSale}){
     return(
         <StyledDivCardCart>
             <figure>
-                <img src={element.img} alt="" />
+                <img src={element.img} alt={element.name} />
             </figure>
             <div>
                 <h3>{element.name}</h3>
@@ -21,5 +21,4 @@ export function CardCart({element, currentSale, setCurrentSale}){
             <button onClick={()=>removeOneProduct()}>Remover</button>
         </StyledDivCardCart>
     )
-    
 }

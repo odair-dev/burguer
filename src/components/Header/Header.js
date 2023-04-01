@@ -66,6 +66,5 @@ export const StyledDivHeader = styled.div`
                 }
             }
         }
-    }
-    
+    }   
 `

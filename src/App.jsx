@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("@CARTLIST", JSON.stringify(currentSale));
-  }, [currentSale]); //atualização
+  }, [currentSale]);
 
   const loadMenu = async ()=>{
     try {
