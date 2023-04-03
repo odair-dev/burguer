@@ -21,6 +21,7 @@ export const StyledDivCardCart = styled.div`
     div{
         margin: 10px;
         h3{
+            width: 130px;
             font-weight: 700;
             font-size: 0.875rem;
             color: var(--gray-100);

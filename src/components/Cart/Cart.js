@@ -1,15 +1,23 @@
 import styled from "styled-components";
 
 export const StyledDivCart = styled.div`
-    width: 90%;
-    max-width: 365px;
+    width: 100%;
     height: fit-content;
     margin: 16px 20px 0 10px;
-    background: var(--gray-0);
-    justify-self: center;
+    padding-right: 20px;
+    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
     @media(min-width: 768px){
         width: 365px;
         max-width: none;
+        padding-right: 0;
+    }
+    .containerCart{
+        width: 100%;
+        max-width: 365px;
+        background: var(--gray-0);
     }
     header{
         width: 100%;
